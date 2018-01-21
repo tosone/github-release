@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/parnurzeal/gorequest"
+	"github.com/spf13/viper"
 	"github.com/tosone/release2github/common"
 	"github.com/tosone/release2github/common/resp"
 )
@@ -16,10 +17,14 @@ func Check(tag string) (releaseID uint, err error) {
 	var url = fmt.Sprintf("%s/releases/tags/%s%s", common.RepoUrl(), tag, common.OAuthClientQueryString())
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
+		SetDebug(viper.GetBool("Runtime.Debug")).
 		Get(url).
 		End()
 	if len(errs) != 0 {
 		err = errs[len(errs)-1]
+		return
+	}
+	if response.StatusCode == 404 {
 		return
 	}
 	if response.StatusCode != 200 {

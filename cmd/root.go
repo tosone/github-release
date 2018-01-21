@@ -10,6 +10,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/tosone/logging"
 	"github.com/tosone/release2github/cmd/create"
+	"github.com/tosone/release2github/cmd/delete"
 	"github.com/tosone/release2github/cmd/version"
 	"github.com/tosone/release2github/common"
 )
@@ -28,6 +29,7 @@ var versionCmd = &cobra.Command{
 	Short: "get version",
 	Long:  ``,
 	Run: func(_ *cobra.Command, _ []string) {
+		initConfig()
 		version.Initialize()
 	},
 }
@@ -36,11 +38,21 @@ var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "",
 	Long:  ``,
+	Args:  cobra.MinimumNArgs(0),
+	Run: func(_ *cobra.Command, args []string) {
+		initConfig()
+		create.Initialize(dir, args...)
+	},
+}
+
+var deleteCmd = &cobra.Command{
+	Use:   "delete",
+	Short: "",
+	Long:  ``,
 	Args:  cobra.MinimumNArgs(1),
 	Run: func(_ *cobra.Command, args []string) {
 		initConfig()
-		fmt.Println(viper.GetStringSlice("Release.Files"))
-		create.Initialize(dir, args...)
+		delete.Initialize(args...)
 	},
 }
 
@@ -54,10 +66,12 @@ func init() {
 
 	RootCmd.AddCommand(createCmd)
 	RootCmd.AddCommand(versionCmd)
+	RootCmd.AddCommand(deleteCmd)
 }
 
 func initConfig() {
-	defaultConfig()
+	viper.SetConfigType("yaml")
+	viper.SetEnvPrefix(common.EnvPrefix)
 	if dir != "" {
 		var config = path.Join(dir, common.Config)
 		if !com.IsFile(config) {
@@ -72,9 +86,4 @@ func initConfig() {
 	if err := viper.ReadInConfig(); err != nil {
 		logging.Panic("Cannot find the special config file.")
 	}
-}
-
-func defaultConfig() {
-	viper.SetDefault("DatabaseEngine", "sqlite3")
-	viper.SetDefault("log", "err.log")
 }

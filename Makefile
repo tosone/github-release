@@ -3,10 +3,25 @@ GitHash    = main.GitHash=$(shell git rev-parse HEAD)
 Version    = main.Version=$(shell git describe --abbrev=0 --tags)
 Target     = release2github
 
-build: clean
+all: clean mkdir drawin linux armv5 armv6 armv7
+
+mkdir:
 	mkdir release
-	GOOS=darwin GOARCH=amd64 go build -v -o release/${Target}-drawin -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}" main.go
-	GOOS=linux GOARCH=amd64 go build -v -o release/${Target}-linux -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}" main.go
+
+drawin:
+	GOOS=darwin GOARCH=amd64 go build -v -o release/${Target}-drawin -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}"
+
+linux:
+	GOOS=linux GOARCH=amd64 go build -v -o release/${Target}-linux -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}"
+
+armv5:
+	GOOS=linux GOARCH=arm GOARM=5 go build -v -o release/${Target}-armv5 -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}"
+
+armv6:
+	GOOS=linux GOARCH=arm GOARM=6 go build -v -o release/${Target}-armv6 -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}"
+
+armv7:
+	GOOS=linux GOARCH=arm GOARM=7 go build -v -o release/${Target}-armv7 -ldflags "-s -w -X ${BuildStamp} -X ${GitHash} -X ${Version}"
 
 authors:
 	echo "Authors\n=======\n\nProject's contributors:\n" > AUTHORS.md

@@ -13,15 +13,17 @@ const UploadUrlUseless = "{?name,label}"
 
 const ApiGithub = "https://api.github.com"
 
-const Config = "config.yaml"
+const Config = ".release"
+
+const EnvPrefix = "release"
 
 func RepoUrl() string {
-	return fmt.Sprintf("%s/repos/%s/%s", ApiGithub, viper.GetString("Common.Username"), viper.GetString("Common/Repo"))
+	return fmt.Sprintf("%s/repos/%s/%s", ApiGithub, viper.GetString("Username"), viper.GetString("Repo"))
 }
 
 func OAuthClientQueryString() string {
-	var ClientID = viper.GetString("Common.ClientID")
-	var ClientSecret = viper.GetString("Common.ClientSecret")
+	var ClientID = viper.GetString("ClientID")
+	var ClientSecret = viper.GetString("ClientSecret")
 	if ClientID == "" || ClientSecret == "" {
 		return ""
 	}
@@ -33,5 +35,5 @@ func Timeout() time.Duration {
 }
 
 func Token() string {
-	return fmt.Sprintf("token %s", viper.GetString("Common.Token"))
+	return fmt.Sprintf("token %s", viper.GetString("Token"))
 }
