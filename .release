@@ -1,7 +1,7 @@
 Username: tosone
 Repo: release2github
 Branch: master
-Rewrite: true
+Rewrite: false
 Draft: false
 Prerelease: false
 Runtime:
