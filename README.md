@@ -46,3 +46,9 @@ Flags:
 
 Use "release2github [command] --help" for more information about a command.
 ```
+
+### Env
+
+- All of the config can be set in environment with prefix `RELEASE` and Separate with `_`.
+- `Token`, `ClientID`, `ClientSecret` can be set as a variable in environment.
+- `Token` can be set as `RELEASE_TOKEN`.
