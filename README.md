@@ -1,36 +1,35 @@
-# github-release
+# release2github [![Build Status](https://travis-ci.org/tosone/release2github.svg?branch=v0.0.1)](https://travis-ci.org/tosone/release2github)
 
-### config
+Release files and changelog to github release page.
+
+### Usage
 ``` yaml
-Username: tosone
-Repo: test
-Branch: master
-Token: token
-ClientID: ClientID
-ClientSecret: ClientSecret
-Rewrite: true
-Draft: false
-Prerelease: false
+Username: tosone # Github username
+Repo: release2github # repo name 
+Branch: master # Build branch 
+Token: token # Github token, generate a token here https://github.com/settings/tokens
+ClientID: ClientID # New a OAuth app that can visit https://api.github.com more times. https://github.com/settings/developers
+ClientSecret: ClientSecret # OAuth app client Secret.
+Rewrite: true # Is rewrite the release or not. 
+Draft: false # Is just a Draft or not.
+Prerelease: false # Is prerelease or not.
 Runtime:
-  Timeout: 10
-  Debug: true
+  Timeout: 10 # Wait for visit https://api.github.com max timeout.
+  Debug: true # Print the debug information.
 Release:
-  Files:
+  Files: # All of the files that will be upload release page.
     - release/*
     - debug/*
     - releasefile
-  Compress: true
-  CompressWith:
+  Compress: true # Is compress the upload files or not.
+  CompressWith: # The files that will compress with upload file.
     - with/*
     - LICENSE
 ```
+
 ``` bash
-release2github create
-```
-``` bash
-release --help
-```
-``` bash
+release2github --help
+
 Release files and changelog to github release page.
 
 Usage:
