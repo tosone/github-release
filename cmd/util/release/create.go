@@ -15,9 +15,10 @@ func Create(release req.Release) (releaseResp resp.Release, err error) {
 	var url = fmt.Sprintf("%s/releases%s", common.RepoUrl(), common.OAuthClientQueryString())
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
+		SetDebug(viper.GetBool("Runtime.Debug")).
 		Post(url).
 		Type("json").
-		Set("Authorization", fmt.Sprintf("token %s", viper.GetString("Token"))).
+		Set("Authorization", common.Token()).
 		Set("Accept", "application/vnd.github.v3+json").
 		SendStruct(release).
 		End()

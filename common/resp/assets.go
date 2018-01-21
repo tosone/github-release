@@ -2,7 +2,7 @@ package resp
 
 type Uploader struct {
 	Login             string `json:"login"`
-	ID                int    `json:"id"`
+	ID                uint   `json:"id"`
 	AvatarUrl         string `json:"avatar_url"`
 	GravatarID        string `json:"gravatar_id"`
 	Url               string `json:"url"`
@@ -23,7 +23,7 @@ type Uploader struct {
 type Asset struct {
 	Url                string   `json:"url"`
 	BrowserDownloadUrl string   `json:"browser_download_url"`
-	ID                 string   `json:"id"`
+	ID                 uint     `json:"id"`
 	Name               string   `json:"name"`
 	Label              string   `json:"label"`
 	State              string   `json:"state"`

@@ -1,0 +1,21 @@
+Username: tosone
+Repo: test
+Branch: master
+Token: token
+ClientID: ClientID
+ClientSecret: ClientSecret
+Rewrite: true
+Draft: false
+Prerelease: false
+Runtime:
+  Timeout: 10
+  Debug: true
+Release:
+  Pattern: release/*
+  Files:
+    - file1
+    - file2
+  Compress: true
+  CompressWith:
+    - config.yaml
+    - file3

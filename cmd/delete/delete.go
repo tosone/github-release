@@ -7,15 +7,21 @@ import (
 	"github.com/tosone/release2github/cmd/util/release"
 )
 
-func Initialize(tag string) {
+func Initialize(tags ...string) {
 	var err error
-	var releaseID uint
-	if releaseID, err = release.Check(tag); err != nil {
-		logging.Fatal(err)
-	} else if releaseID != 0 {
-		if err = release.Delete(releaseID); err != nil {
+	if len(tags) == 0 {
+		logging.Error("No tag release to delete.")
+		return
+	}
+	for _, tag := range tags {
+		var releaseID uint
+		if releaseID, err = release.Check(tag); err != nil {
 			logging.Fatal(err)
+		} else if releaseID != 0 {
+			if err = release.Delete(releaseID); err != nil {
+				logging.Fatal(err)
+			}
+			logging.Info(fmt.Sprintf("Delete %s release from Github successful.", tag))
 		}
-		logging.Info(fmt.Sprintf("Delete %s from Github successful.", tag))
 	}
 }
