@@ -22,10 +22,14 @@ func Upload(url, file string) (err error) {
 	} else {
 		mime = filetype.GetType(strings.TrimPrefix(ext, ".")).MIME.Value
 	}
-	if strings.IndexAny(url, "?") != -1 {
-		url = fmt.Sprintf("%s&name=%s", url, filepath.Base(file))
+	if strings.Index(url, "?") == -1 {
+		if common.OAuthClientQueryString() == "" {
+			url = fmt.Sprintf("%s?name=%s", url, filepath.Base(file))
+		} else {
+			url = fmt.Sprintf("%s%s&name=%s", url, common.OAuthClientQueryString(), filepath.Base(file))
+		}
 	} else {
-		url = fmt.Sprintf("%s%s&name=%s", url, common.OAuthClientQueryString(), filepath.Base(file))
+		url = fmt.Sprintf("%s&name=%s", url, filepath.Base(file))
 	}
 
 	var fileInfo *os.File
@@ -50,7 +54,7 @@ func Upload(url, file string) (err error) {
 
 	var dump []byte
 	if viper.GetBool("Runtime.Debug") {
-		if dump, err = httputil.DumpRequestOut(request, true); err != nil {
+		if dump, err = httputil.DumpRequestOut(request, false); err != nil {
 			return
 		}
 		fmt.Println(string(dump))
@@ -63,7 +67,7 @@ func Upload(url, file string) (err error) {
 	defer response.Body.Close()
 
 	if viper.GetBool("Runtime.Debug") {
-		if dump, err = httputil.DumpResponse(response, true); err != nil {
+		if dump, err = httputil.DumpResponse(response, false); err != nil {
 			return
 		}
 		fmt.Println(string(dump))

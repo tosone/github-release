@@ -18,7 +18,7 @@ func ChangeLog(dir string) (changeLog []byte, tag string, err error) {
 		log.Fatal("Cannot find any tags. Please add a tag and try again.")
 	} else if len(tagList) == 1 {
 		tag = tagList[0]
-		changeLog, err = run(dir, "git log --pretty=format:'%s'")
+		changeLog, err = run(dir, "git log --pretty=format:'* %s'")
 		if err != nil {
 			return
 		}
