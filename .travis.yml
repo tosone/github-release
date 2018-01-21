@@ -1,0 +1,10 @@
+language: go
+go:
+- '1.9.2'
+script: make
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ./release/release2github-linux create
+  on:
+    branch: master

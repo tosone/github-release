@@ -1,9 +1,6 @@
 Username: tosone
-Repo: test
+Repo: release2github
 Branch: master
-Token: token
-ClientID: ClientID
-ClientSecret: ClientSecret
 Rewrite: true
 Draft: false
 Prerelease: false
@@ -11,11 +8,9 @@ Runtime:
   Timeout: 10
   Debug: true
 Release:
-  Pattern: release/*
   Files:
-    - file1
-    - file2
+    - release/*
   Compress: true
   CompressWith:
-    - config.yaml
-    - file3
+    - README.md
+    - .release
