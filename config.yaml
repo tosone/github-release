@@ -1,0 +1,21 @@
+Common:
+  Username: tosone
+  Repo: test
+  Branch: master
+  Token: "token 9275a8fc9ad65891f8146f93ef8aec0d2a5c82ea"
+  ClientID: 3d032602cc3318f720bf
+  ClientSecret: 8e7f4a421ce4183bcc4ffb16991942c18cd0c9b6
+  Rewrite: true
+  Draft: false
+  Prerelease: false
+Runtime:
+  Timeout: 10
+Release:
+  Pattern: release/*
+  Files:
+    - file1
+    - file2
+  Compress: true
+  CompressWith:
+    - config.yaml
+    - file3
