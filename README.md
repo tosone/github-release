@@ -3,6 +3,10 @@
 Release files and changelog to github release page.
 
 ### Usage
+
+Release with a config file, default is `.release`. And execute path should be a git working repository.
+Before push release files you should add a tag for you git repository, or you will fail to push any to github.
+
 ``` yaml
 Username: tosone # Github username
 Repo: release2github # repo name 
