@@ -2,6 +2,16 @@
 
 Release files and changelog to github release page.
 
+### Compile
+
+Latest Golang.
+
+``` bash
+git clone https://github.com/tosone/release2github.git
+cd release2github
+make
+```
+
 ### Usage
 
 Release with a config file, default is `.release`. And execute path should be a git working repository.
