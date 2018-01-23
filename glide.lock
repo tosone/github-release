@@ -1,5 +1,5 @@
 hash: 069a73e4a221b2ae8cd54e44a931fb2e232fae5aae075ada027fb11d418ef1d9
-updated: 2018-01-21T12:52:03.263567673+08:00
+updated: 2018-01-23T21:06:43.886577643+08:00
 imports:
 - name: github.com/dsnet/compress
   version: cc9eb1d7ad760af14e8f918698f745e80377af4f
@@ -55,7 +55,7 @@ imports:
 - name: github.com/spf13/viper
   version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
 - name: github.com/tosone/logging
-  version: 4de50e539aff22145cc5abd8869ba604448bb60d
+  version: 015eb1d0fe2a14cd62fe69346b87b8fe52d111c9
 - name: github.com/ulikunitz/xz
   version: 0c6b41e72360850ca4f98dc341fd999726ea007f
   subpackages:
