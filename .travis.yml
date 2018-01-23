@@ -7,4 +7,4 @@ deploy:
   skip_cleanup: true
   script: ./release/release2github-linux create
   on:
-    branch: master
+    tag: true
