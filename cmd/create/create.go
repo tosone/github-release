@@ -27,14 +27,17 @@ func Initialize(dir string, files ...string) {
 	if changeLog, tag, err = git.ChangeLog(dir); err != nil {
 		logging.Fatal(err)
 	}
-	if viper.GetBool("Rewrite") {
-		var releaseID uint
-		if releaseID, err = release.Check(tag); err != nil {
-			logging.Fatal(err)
-		} else if releaseID != 0 {
+	var releaseID uint
+	if releaseID, err = release.Check(tag); err != nil {
+		logging.Fatal(err)
+	} else if releaseID != 0 {
+		if viper.GetBool("Rewrite") {
 			if err = release.Delete(releaseID); err != nil {
 				logging.Fatal(err)
 			}
+		} else {
+			logging.Info("Release exist already.")
+			return
 		}
 	}
 	var releaseReq = req.Release{
