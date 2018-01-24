@@ -15,7 +15,7 @@ make
 ### Usage
 
 Release with a config file, default is `.release`. And execute path should be a git working repository.
-Before push release files you should add a tag for you git repository, or you will fail to push any to github.
+Before release files you should add a tag for this repository or it will fail.
 
 ``` yaml
 Username: tosone # Github username
