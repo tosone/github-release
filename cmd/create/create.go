@@ -3,9 +3,7 @@ package create
 import (
 	"fmt"
 	"strings"
-
 	"path/filepath"
-
 	"os"
 	"path"
 
