@@ -1,5 +1,6 @@
-# release2github [![Build Status](https://travis-ci.org/tosone/release2github.svg?branch=v0.0.1)](https://travis-ci.org/tosone/release2github)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftosone%2Frelease2github.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftosone%2Frelease2github?ref=badge_shield)
+# release2github 
+
+[![Build Status](https://travis-ci.org/tosone/release2github.svg)](https://travis-ci.org/tosone/release2github)
 
 Release files and changelog to github release page.
 
@@ -62,11 +63,9 @@ Flags:
 Use "release2github [command] --help" for more information about a command.
 ```
 
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftosone%2Frelease2github.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftosone%2Frelease2github?ref=badge_large)
-
 ### Env
 
 - All of the config can be set in environment with prefix `RELEASE` and Separate with `_`.
 - `Token`, `ClientID`, `ClientSecret` can be set as a variable in environment.
 - `Token` can be set as `RELEASE_TOKEN`.
+

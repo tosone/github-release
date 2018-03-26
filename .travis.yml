@@ -1,10 +1,13 @@
 language: go
 go:
-- '1.9.2'
+  - '1.10.1'
+before_script:
+  - sudo apt-get -qq update
+  - go get -u -v github.com/karalabe/xgo
 script: make
 deploy:
   provider: script
   skip_cleanup: true
-  script: ./release/release2github-linux create
+  script: make release && ./release2github-linux create
   on:
     tags: true
