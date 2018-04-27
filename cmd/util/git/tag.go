@@ -9,7 +9,7 @@ import (
 	"github.com/Unknwon/com"
 )
 
-// ChangeLog ..
+// ChangeLog get current tag between last tag chang log
 func ChangeLog(dir string) (changeLog []byte, tag string, err error) {
 	var tagList []string
 	if tagList, err = tags(dir); err != nil {

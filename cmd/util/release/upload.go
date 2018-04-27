@@ -14,7 +14,7 @@ import (
 	"gopkg.in/h2non/filetype.v1"
 )
 
-// Upload ..
+// Upload upload file to specified release on GitHub
 func Upload(url, file string) (err error) {
 	var ext = filepath.Ext(file)
 	var mime string
