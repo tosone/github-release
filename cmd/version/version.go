@@ -7,25 +7,26 @@ import (
 	"github.com/tosone/release2github/common"
 )
 
-// Version version
+// Version build version
 var Version = "no provided"
 
-// BuildStamp BuildStamp
+// BuildStamp build timestamp
 var BuildStamp = "no provided"
 
-// GitHash GitHash
+// GitHash build git hash
 var GitHash = "no provided"
 
-// Setting ..
+// Setting set build info
 func Setting(version, buildStamp, gitHash string) {
 	Version = version
 	BuildStamp = buildStamp
 	GitHash = gitHash
 }
 
-// Initialize ..
+// Initialize version command
 func Initialize() {
-	fmt.Printf("%s %s %s/%s\n", common.AppName, Version, runtime.GOOS, runtime.GOARCH)
-	fmt.Printf("BuildDate: %s\n", BuildStamp)
+	fmt.Printf("%s %s/%s\n", common.AppName, runtime.GOOS, runtime.GOARCH)
+	fmt.Printf("BuildVersion: %s\n", Version)
 	fmt.Printf("BuildHash: %s\n", GitHash)
+	fmt.Printf("BuildDate: %s\n", BuildStamp)
 }

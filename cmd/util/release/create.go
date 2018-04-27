@@ -11,7 +11,7 @@ import (
 	"github.com/tosone/release2github/common/resp"
 )
 
-// Create ..
+// Create create release on GitGub
 func Create(release req.Release) (releaseResp resp.Release, err error) {
 	var url = fmt.Sprintf("%s/releases%s",
 		common.RepoURL(), common.OAuthClientQueryString())

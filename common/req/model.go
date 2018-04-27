@@ -1,6 +1,6 @@
 package req
 
-// Release ..
+// Release create release on GitHub
 type Release struct {
 	TagName         string `json:"tag_name"`
 	TargetCommitish string `json:"target_commitish"`
