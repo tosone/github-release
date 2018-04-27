@@ -14,6 +14,7 @@ import (
 	"gopkg.in/h2non/filetype.v1"
 )
 
+// Upload ..
 func Upload(url, file string) (err error) {
 	var ext = filepath.Ext(file)
 	var mime string
@@ -22,7 +23,7 @@ func Upload(url, file string) (err error) {
 	} else {
 		mime = filetype.GetType(strings.TrimPrefix(ext, ".")).MIME.Value
 	}
-	if strings.Index(url, "?") == -1 {
+	if !strings.Contains(url, "?") {
 		if common.OAuthClientQueryString() == "" {
 			url = fmt.Sprintf("%s?name=%s", url, filepath.Base(file))
 		} else {
@@ -36,7 +37,11 @@ func Upload(url, file string) (err error) {
 	if fileInfo, err = os.Open(file); err != nil {
 		return
 	}
-	defer fileInfo.Close()
+	defer func() {
+		if err = fileInfo.Close(); err != nil {
+			return
+		}
+	}()
 	var request *http.Request
 	if request, err = http.NewRequest("POST", url, fileInfo); err != nil {
 		return
@@ -64,7 +69,11 @@ func Upload(url, file string) (err error) {
 	if response, err = http.DefaultClient.Do(request); err != nil {
 		return
 	}
-	defer response.Body.Close()
+	defer func() {
+		if err = response.Body.Close(); err != nil {
+			return
+		}
+	}()
 
 	if viper.GetBool("Runtime.Debug") {
 		if dump, err = httputil.DumpResponse(response, false); err != nil {

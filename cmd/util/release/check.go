@@ -10,11 +10,13 @@ import (
 	"github.com/tosone/release2github/common/resp"
 )
 
+// Check ..
 func Check(tag string) (releaseID uint, err error) {
 	if tag == "" {
 		return
 	}
-	var url = fmt.Sprintf("%s/releases/tags/%s%s", common.RepoUrl(), tag, common.OAuthClientQueryString())
+	var url = fmt.Sprintf("%s/releases/tags/%s%s",
+		common.RepoURL(), tag, common.OAuthClientQueryString())
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
 		SetDebug(viper.GetBool("Runtime.Debug")).

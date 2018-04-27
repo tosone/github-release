@@ -11,8 +11,10 @@ import (
 	"github.com/tosone/release2github/common/resp"
 )
 
+// Create ..
 func Create(release req.Release) (releaseResp resp.Release, err error) {
-	var url = fmt.Sprintf("%s/releases%s", common.RepoUrl(), common.OAuthClientQueryString())
+	var url = fmt.Sprintf("%s/releases%s",
+		common.RepoURL(), common.OAuthClientQueryString())
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
 		SetDebug(viper.GetBool("Runtime.Debug")).

@@ -1,5 +1,6 @@
 package req
 
+// Release ..
 type Release struct {
 	TagName         string `json:"tag_name"`
 	TargetCommitish string `json:"target_commitish"`
