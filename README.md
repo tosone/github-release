@@ -68,4 +68,5 @@ Use "release2github [command] --help" for more information about a command.
 - All of the config can be set in environment with prefix `RELEASE` and Separate with `_`.
 - `Token`, `ClientID`, `ClientSecret` can be set as a variable in environment.
 - `Token` can be set as `RELEASE_TOKEN`.
+- `RELEASE_TOKEN`, `RELEASE_CLIENTID`, `RELEASE_CLIENTSECRET` should be set in your env.
 

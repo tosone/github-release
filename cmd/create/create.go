@@ -18,7 +18,7 @@ import (
 	"github.com/tosone/release2github/common/resp"
 )
 
-// Initialize ..
+// Initialize create a new release on tag to GitHub
 func Initialize(dir string, files ...string) {
 	var err error
 	var changeLog []byte

@@ -10,7 +10,7 @@ import (
 	"github.com/tosone/release2github/common/resp"
 )
 
-// Check ..
+// Check check tag exist or not
 func Check(tag string) (releaseID uint, err error) {
 	if tag == "" {
 		return

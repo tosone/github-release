@@ -8,7 +8,7 @@ import (
 	"github.com/tosone/release2github/common"
 )
 
-// Delete ..
+// Delete delete specified release
 func Delete(releaseID uint) (err error) {
 	if releaseID == 0 {
 		err = fmt.Errorf("release id is not correct: %d", releaseID)
