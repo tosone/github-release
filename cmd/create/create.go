@@ -2,10 +2,10 @@ package create
 
 import (
 	"fmt"
-	"strings"
-	"path/filepath"
 	"os"
 	"path"
+	"path/filepath"
+	"strings"
 
 	"github.com/Unknwon/com"
 	"github.com/mholt/archiver"
@@ -18,6 +18,7 @@ import (
 	"github.com/tosone/release2github/common/resp"
 )
 
+// Initialize ..
 func Initialize(dir string, files ...string) {
 	var err error
 	var changeLog []byte
@@ -50,7 +51,7 @@ func Initialize(dir string, files ...string) {
 	if releaseResp, err = release.Create(releaseReq); err != nil {
 		logging.Fatal(err)
 	}
-	var uploadUrl = strings.TrimSuffix(releaseResp.UploadUrl, common.UploadUrlUseless)
+	var uploadURL = strings.TrimSuffix(releaseResp.UploadURL, common.UploadURLUseless)
 
 	// Collect all files that will upload to the release assets.
 	var releaseFiles []string
@@ -74,9 +75,9 @@ func Initialize(dir string, files ...string) {
 	if viper.GetBool("Release.Compress") {
 		var compressFiles []string
 		var compressWithSlice = viper.GetStringSlice("Release.CompressWith")
-		for _, commpressWith := range compressWithSlice {
+		for _, compressWith := range compressWithSlice {
 			var fileList []string
-			if fileList, err = filepath.Glob(commpressWith); err != nil {
+			if fileList, err = filepath.Glob(compressWith); err != nil {
 				logging.Error(err)
 				continue
 			}
@@ -104,7 +105,7 @@ func Initialize(dir string, files ...string) {
 					logging.Error(err)
 					continue
 				}
-				if err = release.Upload(uploadUrl, compressPackage); err != nil {
+				if err = release.Upload(uploadURL, compressPackage); err != nil {
 					logging.Error(err)
 				}
 				if com.IsFile(compressPackage) {
@@ -116,11 +117,11 @@ func Initialize(dir string, files ...string) {
 		}
 	} else {
 		for _, file := range releaseFiles {
-			if err = release.Upload(uploadUrl, file); err != nil {
+			if err = release.Upload(uploadURL, file); err != nil {
 				logging.Error(err)
 			}
 		}
 	}
 
-	logging.Info(fmt.Sprintf("Release to Github successful. Please see it at %s.", releaseResp.HtmlUrl))
+	logging.Info(fmt.Sprintf("Release to Github successful. Please see it at %s.", releaseResp.HTMLURL))
 }
