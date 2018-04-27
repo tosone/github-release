@@ -7,6 +7,7 @@ import (
 	"github.com/tosone/release2github/cmd/util/release"
 )
 
+// Initialize ..
 func Initialize(tags ...string) {
 	var err error
 	if len(tags) == 0 {
