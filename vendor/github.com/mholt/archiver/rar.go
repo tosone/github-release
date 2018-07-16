@@ -5,35 +5,20 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/nwaples/rardecode"
 )
 
-// Rar is for RAR archive format
-var Rar rarFormat
-
-func init() {
-	RegisterFormat("Rar", Rar)
-}
-
-type rarFormat struct{}
-
-func (rarFormat) Match(filename string) bool {
-	// TODO: read file header to identify the format
-	return strings.HasSuffix(strings.ToLower(filename), ".rar")
-}
-
-// Make makes a .rar archive, but this is not implemented because
+// Rar makes a .rar archive, but this is not implemented because
 // RAR is a proprietary format. It is here only for symmetry with
 // the other archive formats in this package.
-func (rarFormat) Make(rarPath string, filePaths []string) error {
+func Rar(rarPath string, filePaths []string) error {
 	return fmt.Errorf("make %s: RAR not implemented (proprietary format)", rarPath)
 }
 
-// Open extracts the RAR file at source and puts the contents
+// Unrar extracts the RAR file at source and puts the contents
 // into destination.
-func (rarFormat) Open(source, destination string) error {
+func Unrar(source, destination string) error {
 	f, err := os.Open(source)
 	if err != nil {
 		return fmt.Errorf("%s: failed to open archive: %v", source, err)

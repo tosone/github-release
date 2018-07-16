@@ -11,10 +11,8 @@ else
 	OSName = $(shell echo $(shell uname -s) | tr '[:upper:]' '[:lower:]')
 endif
 
-all: ${OSName}
-
-${OSName}:
-	GOOS=$@ GOARCH=amd64 go build -v -o ${Target}-$@${Suffix} -ldflags "-s -w -X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}"
+${OSName}: clean
+	GOOS=$@ go build -v -o release/${Target}-$@${Suffix} -ldflags "-s -w -X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}"
 
 release:
 	xgo -v -out ${Target}-${Version} --targets=windows/*,darwin/*,linux/* -ldflags "-s -w -X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}" github.com/EffDataAly/GithubTraveler
@@ -29,6 +27,6 @@ lint:
 	gometalinter.v2 ./...
 
 clean:
-	-rm -rf release
+	$(RM) -r release
 
 .PHONY: release all

@@ -101,7 +101,7 @@ func Initialize(dir string, files ...string) {
 				filesWillCompress = append(filesWillCompress, file)
 				filesWillCompress = append(filesWillCompress, compressFiles...)
 				var compressPackage = path.Join(os.TempDir(), filepath.Base(file)+".tar.gz")
-				if err = archiver.TarGz.Make(compressPackage, filesWillCompress); err != nil {
+				if err = archiver.TarGz(compressPackage, filesWillCompress); err != nil {
 					logging.Error(err)
 					continue
 				}
