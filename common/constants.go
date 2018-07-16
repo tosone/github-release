@@ -17,7 +17,7 @@ const UploadURLUseless = "{?name,label}"
 const APIGithub = "https://api.github.com"
 
 // Config ..
-const Config = ".release"
+const Config = ".release.yml"
 
 // EnvPrefix ..
 const EnvPrefix = "release"

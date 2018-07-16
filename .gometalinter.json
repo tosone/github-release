@@ -23,7 +23,7 @@
   "lineLength": 200,
   "vendor": true,
   "vendoredLinters": false,
-  "cyclo": 25,
+  "cyclo": 30,
   "Linters": {
     "misspell": {
       "Command": "misspell -i Unknwon",
