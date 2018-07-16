@@ -72,6 +72,10 @@ func Initialize(dir string, files ...string) {
 		}
 	}
 
+	if len(releaseFiles) == 0 {
+		logging.Fatal("Cannot find anything to release.")
+	}
+
 	if viper.GetBool("Release.Compress") {
 		var compressFiles []string
 		var compressWithSlice = viper.GetStringSlice("Release.CompressWith")
@@ -90,7 +94,7 @@ func Initialize(dir string, files ...string) {
 			}
 		}
 		if len(compressFiles) < len(compressWithSlice) {
-			logging.Error("Something error occured will not upload assets.")
+			logging.Error("Some file cannot be found in `CompressWith`.")
 		} else {
 			for _, file := range releaseFiles {
 				var filesWillCompress []string
@@ -101,7 +105,7 @@ func Initialize(dir string, files ...string) {
 				filesWillCompress = append(filesWillCompress, file)
 				filesWillCompress = append(filesWillCompress, compressFiles...)
 				var compressPackage = path.Join(os.TempDir(), filepath.Base(file)+".tar.gz")
-				if err = archiver.TarGz.Make(compressPackage, filesWillCompress); err != nil {
+				if err = archiver.TarGz(compressPackage, filesWillCompress); err != nil {
 					logging.Error(err)
 					continue
 				}
