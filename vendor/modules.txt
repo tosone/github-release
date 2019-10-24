@@ -1,25 +1,25 @@
-# github.com/Unknwon/com v0.0.0-20180617003950-da59b551951d
-github.com/Unknwon/com
-# github.com/dsnet/compress v0.0.0-20171208185109-cc9eb1d7ad76
+# github.com/dsnet/compress v0.0.1
+github.com/dsnet/compress
 github.com/dsnet/compress/bzip2
 github.com/dsnet/compress/bzip2/internal/sais
 github.com/dsnet/compress/internal
 github.com/dsnet/compress/internal/errors
 github.com/dsnet/compress/internal/prefix
-github.com/dsnet/compress
 # github.com/fatih/color v1.7.0
 github.com/fatih/color
 # github.com/fsnotify/fsnotify v1.4.7
 github.com/fsnotify/fsnotify
-# github.com/hashicorp/hcl v0.0.0-20180404174102-ef8a98b0bbce
+# github.com/golang/snappy v0.0.1
+github.com/golang/snappy
+# github.com/hashicorp/hcl v1.0.0
 github.com/hashicorp/hcl
-github.com/hashicorp/hcl/hcl/printer
 github.com/hashicorp/hcl/hcl/ast
 github.com/hashicorp/hcl/hcl/parser
-github.com/hashicorp/hcl/hcl/token
-github.com/hashicorp/hcl/json/parser
+github.com/hashicorp/hcl/hcl/printer
 github.com/hashicorp/hcl/hcl/scanner
 github.com/hashicorp/hcl/hcl/strconv
+github.com/hashicorp/hcl/hcl/token
+github.com/hashicorp/hcl/json/parser
 github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/token
 # github.com/inconshreveable/mousetrap v1.0.0
@@ -30,38 +30,48 @@ github.com/magiconair/properties
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.3
 github.com/mattn/go-isatty
-# github.com/mholt/archiver v1.1.2
+# github.com/mholt/archiver v3.1.1+incompatible
 github.com/mholt/archiver
-# github.com/mitchellh/mapstructure v0.0.0-20180715050151-f15292f7a699
+# github.com/mitchellh/mapstructure v1.1.2
 github.com/mitchellh/mapstructure
-# github.com/moul/http2curl v0.0.0-20170919181001-9ac6cf4d929b
-github.com/moul/http2curl
-# github.com/nwaples/rardecode v0.0.0-20171029023500-e06696f847ae
+# github.com/nwaples/rardecode v1.0.0
 github.com/nwaples/rardecode
-# github.com/parnurzeal/gorequest v0.2.15
+# github.com/parnurzeal/gorequest v0.2.16
 github.com/parnurzeal/gorequest
 # github.com/pelletier/go-toml v1.2.0
 github.com/pelletier/go-toml
+# github.com/pierrec/lz4 v2.3.0+incompatible
+github.com/pierrec/lz4
+github.com/pierrec/lz4/internal/xxh32
 # github.com/pkg/errors v0.8.0
 github.com/pkg/errors
-# github.com/spf13/afero v1.1.1
+# github.com/spf13/afero v1.1.2
 github.com/spf13/afero
 github.com/spf13/afero/mem
-# github.com/spf13/cast v1.2.0
+# github.com/spf13/cast v1.3.0
 github.com/spf13/cast
-# github.com/spf13/cobra v0.0.3
+# github.com/spf13/cobra v0.0.5
 github.com/spf13/cobra
-# github.com/spf13/jwalterweatherman v0.0.0-20180109140146-7c0cea34c8ec
+# github.com/spf13/jwalterweatherman v1.0.0
 github.com/spf13/jwalterweatherman
-# github.com/spf13/pflag v1.0.1
+# github.com/spf13/pflag v1.0.3
 github.com/spf13/pflag
-# github.com/spf13/viper v1.0.2
+# github.com/spf13/viper v1.4.0
 github.com/spf13/viper
-# github.com/tosone/logging v0.0.0-20180712080334-431b4e25ef9f
+# github.com/tosone/logging v0.0.0-20190717132334-b3a0cfb708ca
 github.com/tosone/logging
-# golang.org/x/net v0.0.0-20180712202826-d0887baf81f4
+# github.com/ulikunitz/xz v0.5.6
+github.com/ulikunitz/xz
+github.com/ulikunitz/xz/internal/hash
+github.com/ulikunitz/xz/internal/xlog
+github.com/ulikunitz/xz/lzma
+# github.com/unknwon/com v1.0.1
+github.com/unknwon/com
+# github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
+github.com/xi2/xz
+# golang.org/x/net v0.0.0-20190522155817-f3200d17e092
 golang.org/x/net/publicsuffix
-# golang.org/x/sys v0.0.0-20180709060233-1b2967e3c290
+# golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a
 golang.org/x/sys/unix
 # golang.org/x/text v0.3.0
 golang.org/x/text/transform
@@ -72,5 +82,7 @@ gopkg.in/h2non/filetype.v1/matchers
 gopkg.in/h2non/filetype.v1/types
 # gopkg.in/natefinch/lumberjack.v2 v2.0.0-20170531160350-a96e63847dc3
 gopkg.in/natefinch/lumberjack.v2
-# gopkg.in/yaml.v2 v2.2.1
+# gopkg.in/yaml.v2 v2.2.2
 gopkg.in/yaml.v2
+# moul.io/http2curl v1.0.0
+moul.io/http2curl

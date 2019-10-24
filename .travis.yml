@@ -1,13 +1,16 @@
 language: go
 go:
-  - '1.10.x'
-before_script:
+  - 1.11.x
+  - 1.12.x
+  - 1.13.x
+before_install:
   - sudo apt-get -qq update
+before_script:
+  - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin latest
   - go get -u -v github.com/karalabe/xgo
-  - go get -u -v gopkg.in/alecthomas/gometalinter.v2
-  - gometalinter.v2 --install
-  - go get -u -v github.com/client9/misspell/cmd/misspell
-script: make lint && make
+script:
+  - travis_wait 20 make lint
+  - make
 deploy:
   provider: script
   skip_cleanup: true

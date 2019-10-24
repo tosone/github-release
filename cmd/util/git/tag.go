@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/Unknwon/com"
+	"github.com/unknwon/com"
 )
 
 // ChangeLog get current tag between last tag chang log

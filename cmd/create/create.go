@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Unknwon/com"
+	"github.com/unknwon/com"
 	"github.com/mholt/archiver"
 	"github.com/spf13/viper"
 	"github.com/tosone/logging"
@@ -105,7 +105,8 @@ func Initialize(dir string, files ...string) {
 				filesWillCompress = append(filesWillCompress, file)
 				filesWillCompress = append(filesWillCompress, compressFiles...)
 				var compressPackage = path.Join(os.TempDir(), filepath.Base(file)+".tar.gz")
-				if err = archiver.TarGz(compressPackage, filesWillCompress); err != nil {
+				var tar = archiver.NewTarGz()
+				if err = tar.Archive(filesWillCompress, compressPackage); err != nil {
 					logging.Error(err)
 					continue
 				}
