@@ -5,7 +5,7 @@ github.com/dsnet/compress/bzip2/internal/sais
 github.com/dsnet/compress/internal
 github.com/dsnet/compress/internal/errors
 github.com/dsnet/compress/internal/prefix
-# github.com/fatih/color v1.7.0
+# github.com/fatih/color v1.9.0
 github.com/fatih/color
 # github.com/fsnotify/fsnotify v1.4.7
 github.com/fsnotify/fsnotify
@@ -24,11 +24,11 @@ github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/token
 # github.com/inconshreveable/mousetrap v1.0.0
 github.com/inconshreveable/mousetrap
-# github.com/magiconair/properties v1.8.0
+# github.com/magiconair/properties v1.8.1
 github.com/magiconair/properties
-# github.com/mattn/go-colorable v0.0.9
+# github.com/mattn/go-colorable v0.1.4
 github.com/mattn/go-colorable
-# github.com/mattn/go-isatty v0.0.3
+# github.com/mattn/go-isatty v0.0.12
 github.com/mattn/go-isatty
 # github.com/mholt/archiver v3.1.1+incompatible
 github.com/mholt/archiver
@@ -38,27 +38,29 @@ github.com/mitchellh/mapstructure
 github.com/nwaples/rardecode
 # github.com/parnurzeal/gorequest v0.2.16
 github.com/parnurzeal/gorequest
-# github.com/pelletier/go-toml v1.2.0
+# github.com/pelletier/go-toml v1.6.0
 github.com/pelletier/go-toml
-# github.com/pierrec/lz4 v2.3.0+incompatible
+# github.com/pierrec/lz4 v2.4.1+incompatible
 github.com/pierrec/lz4
 github.com/pierrec/lz4/internal/xxh32
-# github.com/pkg/errors v0.8.0
+# github.com/pkg/errors v0.9.1
 github.com/pkg/errors
-# github.com/spf13/afero v1.1.2
+# github.com/spf13/afero v1.2.2
 github.com/spf13/afero
 github.com/spf13/afero/mem
-# github.com/spf13/cast v1.3.0
+# github.com/spf13/cast v1.3.1
 github.com/spf13/cast
 # github.com/spf13/cobra v0.0.5
 github.com/spf13/cobra
-# github.com/spf13/jwalterweatherman v1.0.0
+# github.com/spf13/jwalterweatherman v1.1.0
 github.com/spf13/jwalterweatherman
-# github.com/spf13/pflag v1.0.3
+# github.com/spf13/pflag v1.0.5
 github.com/spf13/pflag
-# github.com/spf13/viper v1.4.0
+# github.com/spf13/viper v1.6.2
 github.com/spf13/viper
-# github.com/tosone/logging v0.0.0-20190717132334-b3a0cfb708ca
+# github.com/subosito/gotenv v1.2.0
+github.com/subosito/gotenv
+# github.com/tosone/logging v1.1.0
 github.com/tosone/logging
 # github.com/ulikunitz/xz v0.5.6
 github.com/ulikunitz/xz
@@ -69,20 +71,22 @@ github.com/ulikunitz/xz/lzma
 github.com/unknwon/com
 # github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
 github.com/xi2/xz
-# golang.org/x/net v0.0.0-20190522155817-f3200d17e092
+# golang.org/x/net v0.0.0-20200202094626-16171245cfb2
 golang.org/x/net/publicsuffix
-# golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a
+# golang.org/x/sys v0.0.0-20200202164722-d101bd2416d5
 golang.org/x/sys/unix
-# golang.org/x/text v0.3.0
+# golang.org/x/text v0.3.2
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
 # gopkg.in/h2non/filetype.v1 v1.0.5
 gopkg.in/h2non/filetype.v1
 gopkg.in/h2non/filetype.v1/matchers
 gopkg.in/h2non/filetype.v1/types
-# gopkg.in/natefinch/lumberjack.v2 v2.0.0-20170531160350-a96e63847dc3
+# gopkg.in/ini.v1 v1.52.0
+gopkg.in/ini.v1
+# gopkg.in/natefinch/lumberjack.v2 v2.0.0
 gopkg.in/natefinch/lumberjack.v2
-# gopkg.in/yaml.v2 v2.2.2
+# gopkg.in/yaml.v2 v2.2.8
 gopkg.in/yaml.v2
 # moul.io/http2curl v1.0.0
 moul.io/http2curl
