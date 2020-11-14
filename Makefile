@@ -2,24 +2,16 @@ BuildStamp = $(shell date '+%Y-%m-%d_%H:%M:%S')
 GitHash    = $(shell git rev-parse HEAD)
 Version    = $(shell git describe --abbrev=0 --tags --always)
 Target     = $(shell basename $(abspath $(dir $$PWD)))
-Suffix     =
 
-ifeq ($(OS),Windows_NT)
-	OSName = windows
-	Suffix = .exe
-else
-	OSName = $(shell echo $(shell uname -s) | tr '[:upper:]' '[:lower:]')
-endif
-
-.PHONY: ${OSName}
-${OSName}: clean
-	GOOS=$@ go build -v -o ${Target}-$@${Suffix} -ldflags "-s -w -X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}"
+.PHONY: build
+build: clean
+	go build -v -o release/${Target} -ldflags \
+	"-X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}"
 
 .PHONY: release
-release: clean
-	xgo -v -out ${Target}-${Version} --targets=windows/*,darwin/*,linux/* -ldflags "-s -w -X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}" github.com/EffDataAly/GithubTraveler
-	mkdir release
-	mv ${Target}-${Version}-* release
+release:
+	go build -v -o release/${Target} -ldflags \
+	"-s -w -X main.BuildStamp=${BuildStamp} -X main.GitHash=${GitHash} -X main.Version=${Version}"
 
 .PHONY: authors
 authors:
