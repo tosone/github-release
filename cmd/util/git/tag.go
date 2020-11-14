@@ -7,6 +7,8 @@ import (
 	"strings"
 
 	"github.com/unknwon/com"
+
+	"github.com/tosone/release2github/common"
 )
 
 // ChangeLog get current tag between last tag chang log
@@ -25,9 +27,9 @@ func ChangeLog(dir string) (changeLog []byte, tag string, err error) {
 		}
 	} else {
 		tag = tagList[len(tagList)-1]
-		changeLog, err = run(dir,
-			"git log --pretty=format:'* %s' "+fmt.Sprintf("%s..%s", tagList[len(tagList)-2], tag))
-		if err != nil {
+		if changeLog, err = run(dir,
+			fmt.Sprintf("git log --pretty=format:'* %%s [%%h](%s/commit/%%H)' ", common.HostRepoURL())+
+				fmt.Sprintf("%s..%s", tagList[len(tagList)-2], tag)); err != nil {
 			return
 		}
 	}

@@ -8,24 +8,33 @@ import (
 )
 
 // AppName ..
-const AppName = "release2github"
+const AppName = "release"
 
 // UploadURLUseless ..
 const UploadURLUseless = "{?name,label}"
 
 // APIGithub ..
-const APIGithub = "https://api.github.com"
+const APIGitHub = "https://api.github.com"
+
+// HostGitHub ..
+const HostGitHub = "https://github.com"
 
 // Config ..
 const Config = ".release.yml"
 
 // EnvPrefix ..
-const EnvPrefix = "release"
+const EnvPrefix = "RELEASE"
 
-// RepoURL ..
-func RepoURL() string {
+// APIRepoURL ..
+func APIRepoURL() string {
 	return fmt.Sprintf("%s/repos/%s/%s",
-		APIGithub, viper.GetString("Username"), viper.GetString("Repo"))
+		APIGitHub, viper.GetString("Username"), viper.GetString("Repo"))
+}
+
+// HostRepoURL ..
+func HostRepoURL() string {
+	return fmt.Sprintf("%s/%s/%s",
+		HostGitHub, viper.GetString("Username"), viper.GetString("Repo"))
 }
 
 // OAuthClientQueryString ..
@@ -45,5 +54,5 @@ func Timeout() time.Duration {
 
 // Token ..
 func Token() string {
-	return fmt.Sprintf("token %s", viper.GetString("Token"))
+	return fmt.Sprintf("Bearer %s", viper.GetString("TOKEN"))
 }

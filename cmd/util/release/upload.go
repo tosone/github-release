@@ -38,11 +38,7 @@ func Upload(url, file string) (err error) {
 	if fileInfo, err = os.Open(file); err != nil {
 		return
 	}
-	defer func() {
-		if err = fileInfo.Close(); err != nil {
-			return
-		}
-	}()
+
 	var request *http.Request
 	if request, err = http.NewRequest("POST", url, fileInfo); err != nil {
 		return

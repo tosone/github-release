@@ -15,7 +15,7 @@ func Delete(releaseID uint) (err error) {
 		err = fmt.Errorf("release id is not correct: %d", releaseID)
 	}
 	var url = fmt.Sprintf("%s/releases/%d%s",
-		common.RepoURL(), releaseID, common.OAuthClientQueryString())
+		common.APIRepoURL(), releaseID, common.OAuthClientQueryString())
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
 		SetDebug(viper.GetBool("Runtime.Debug")).

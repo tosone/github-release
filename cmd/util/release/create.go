@@ -15,7 +15,7 @@ import (
 // Create create release on GitGub
 func Create(release req.Release) (releaseResp resp.Release, err error) {
 	var url = fmt.Sprintf("%s/releases%s",
-		common.RepoURL(), common.OAuthClientQueryString())
+		common.APIRepoURL(), common.OAuthClientQueryString())
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
 		SetDebug(viper.GetBool("Runtime.Debug")).
