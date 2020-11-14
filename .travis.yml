@@ -14,8 +14,6 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - make release
-    - mv release/release /usr/bin
-    - release create
+    - make release && sudo mv release/release /usr/bin && release create
   on:
     tags: true
