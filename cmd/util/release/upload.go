@@ -10,8 +10,9 @@ import (
 	"strings"
 
 	"github.com/spf13/viper"
-	"github.com/tosone/release2github/common"
 	"gopkg.in/h2non/filetype.v1"
+
+	"github.com/tosone/release2github/common"
 )
 
 // Upload upload file to specified release on GitHub

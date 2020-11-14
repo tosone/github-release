@@ -7,10 +7,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/unknwon/com"
 	"github.com/mholt/archiver"
 	"github.com/spf13/viper"
 	"github.com/tosone/logging"
+	"github.com/unknwon/com"
+
 	"github.com/tosone/release2github/cmd/util/git"
 	"github.com/tosone/release2github/cmd/util/release"
 	"github.com/tosone/release2github/common"

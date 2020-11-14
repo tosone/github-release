@@ -5,10 +5,11 @@ import (
 	"os"
 	"path"
 
-	"github.com/unknwon/com"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/tosone/logging"
+	"github.com/unknwon/com"
+
 	"github.com/tosone/release2github/cmd/create"
 	"github.com/tosone/release2github/cmd/delete"
 	"github.com/tosone/release2github/cmd/version"

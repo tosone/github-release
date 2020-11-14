@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/tosone/logging"
+
 	"github.com/tosone/release2github/cmd/util/release"
 )
 

@@ -5,6 +5,7 @@ import (
 	"runtime"
 
 	"github.com/tosone/logging"
+
 	"github.com/tosone/release2github/cmd"
 	"github.com/tosone/release2github/cmd/version"
 	"github.com/tosone/release2github/common"
