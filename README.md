@@ -16,7 +16,7 @@ make
 
 ### Usage
 
-Release` with a config file, default is `.release`. And execute a path should be a git working repository.
+Release with a config file, default is `.release`. And execute a path should be a git working repository.
 Before release files you should add a tag for this repository, or it will fail.
 
 ``` yaml
