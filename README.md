@@ -1,6 +1,6 @@
-# release2github 
+# release
 
-[![Build Status](https://travis-ci.org/tosone/release2github.svg)](https://travis-ci.org/tosone/release2github)
+[![Build Status](https://travis-ci.org/tosone/release.svg)](https://travis-ci.org/tosone/release)
 
 Release files and changelog to github release page.
 
@@ -9,19 +9,19 @@ Release files and changelog to github release page.
 Latest Golang.
 
 ``` bash
-git clone https://github.com/tosone/release2github.git
-cd release2github
+git clone https://github.com/tosone/release.git
+cd release
 make
 ```
 
 ### Usage
 
-Release with a config file, default is `.release`. And execute path should be a git working repository.
-Before release files you should add a tag for this repository or it will fail.
+Release` with a config file, default is `.release`. And execute a path should be a git working repository.
+Before release files you should add a tag for this repository, or it will fail.
 
 ``` yaml
 Username: tosone # Github username
-Repo: release2github # repo name 
+Repo: release # repo name 
 Branch: master # Build branch 
 Token: token # Github token, generate a token here https://github.com/settings/tokens
 ClientID: ClientID # New a OAuth app that can visit https://api.github.com more times. https://github.com/settings/developers
@@ -44,12 +44,12 @@ Release:
 ```
 
 ``` bash
-release2github --help
+release --help
 
 Release files and changelog to github release page.
 
 Usage:
-  release2github [command]
+  release [command]
 
 Available Commands:
   create      Create a new release on github release page.
@@ -58,15 +58,15 @@ Available Commands:
   version     Get version
 
 Flags:
-  -h, --help   help for release2github
+  -h, --help   help for release
 
-Use "release2github [command] --help" for more information about a command.
+Use "release [command] --help" for more information about a command.
 ```
 
 ### Env
 
-- All of the config can be set in environment with prefix `RELEASE` and Separate with `_`.
-- `Token`, `ClientID`, `ClientSecret` can be set as a variable in environment.
+- All the config can be set in environment with prefix `RELEASE` and Separate with `_`.
+- `Token` can be set as a variable in environment.
 - `Token` can be set as `RELEASE_TOKEN`.
-- `RELEASE_TOKEN`, `RELEASE_CLIENTID`, `RELEASE_CLIENTSECRET` should be set in your env.
+- `RELEASE_TOKEN` should be set in your env.
 
