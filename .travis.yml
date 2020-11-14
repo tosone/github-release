@@ -1,19 +1,21 @@
 language: go
 go:
-  - 1.11.x
-  - 1.12.x
   - 1.13.x
+  - 1.14.x
+  - 1.15.x
 before_install:
   - sudo apt-get -qq update
 before_script:
-  - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin latest
-  - go get -u -v github.com/karalabe/xgo
+  - go get github.com/golangci/golangci-lint/cmd/golangci-lint
 script:
-  - travis_wait 20 make lint
+  - make lint
   - make
 deploy:
   provider: script
   skip_cleanup: true
-  script: make release && ./release2github-linux create
+  script:
+    - make release
+    - mv release/release /usr/bin
+    - release create
   on:
     tags: true
