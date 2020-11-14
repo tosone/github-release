@@ -44,5 +44,5 @@ func Timeout() time.Duration {
 
 // Token ..
 func Token() string {
-	return fmt.Sprintf("Bearer %s", viper.GetString("TOKEN"))
+	return fmt.Sprintf("Bearer %s", viper.GetString("Token"))
 }
