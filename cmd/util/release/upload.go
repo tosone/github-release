@@ -25,11 +25,7 @@ func Upload(url, file string) (err error) {
 		mime = filetype.GetType(strings.TrimPrefix(ext, ".")).MIME.Value
 	}
 	if !strings.Contains(url, "?") {
-		if common.OAuthClientQueryString() == "" {
-			url = fmt.Sprintf("%s?name=%s", url, filepath.Base(file))
-		} else {
-			url = fmt.Sprintf("%s%s&name=%s", url, common.OAuthClientQueryString(), filepath.Base(file))
-		}
+		url = fmt.Sprintf("%s?name=%s", url, filepath.Base(file))
 	} else {
 		url = fmt.Sprintf("%s&name=%s", url, filepath.Base(file))
 	}

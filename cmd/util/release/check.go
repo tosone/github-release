@@ -16,8 +16,8 @@ func Check(tag string) (releaseID uint, err error) {
 	if tag == "" {
 		return
 	}
-	var url = fmt.Sprintf("%s/releases/tags/%s%s",
-		common.APIRepoURL(), tag, common.OAuthClientQueryString())
+	var url = fmt.Sprintf("%s/releases/tags/%s",
+		common.APIRepoURL(), tag)
 	response, body, errs := gorequest.New().
 		Timeout(common.Timeout()).
 		SetDebug(viper.GetBool("Runtime.Debug")).

@@ -37,16 +37,6 @@ func HostRepoURL() string {
 		HostGitHub, viper.GetString("Username"), viper.GetString("Repo"))
 }
 
-// OAuthClientQueryString ..
-func OAuthClientQueryString() string {
-	var ClientID = viper.GetString("ClientID")
-	var ClientSecret = viper.GetString("ClientSecret")
-	if ClientID == "" || ClientSecret == "" {
-		return ""
-	}
-	return fmt.Sprintf("?client_id=%s&client_secret=%s", ClientID, ClientSecret)
-}
-
 // Timeout ..
 func Timeout() time.Duration {
 	return time.Second * time.Duration(viper.GetInt("Runtime.Timeout"))
