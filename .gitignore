@@ -17,5 +17,3 @@
 
 release/
 !cmd/util/release/
-
-release2github-*
