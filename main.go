@@ -6,9 +6,9 @@ import (
 
 	"github.com/tosone/logging"
 
-	"github.com/tosone/release2github/cmd"
-	"github.com/tosone/release2github/cmd/version"
-	"github.com/tosone/release2github/common"
+	"github.com/tosone/release/cmd"
+	"github.com/tosone/release/cmd/version"
+	"github.com/tosone/release/common"
 )
 
 // Version version

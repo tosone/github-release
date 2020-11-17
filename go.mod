@@ -1,12 +1,12 @@
-module github.com/tosone/release2github
+module github.com/tosone/release
 
-go 1.13
+go 1.15
 
 require (
 	github.com/dsnet/compress v0.0.1 // indirect
-	github.com/elazarl/goproxy v0.0.0-20191011121108-aa519ddbe484 // indirect
+	github.com/elazarl/goproxy v0.0.0-20201021153353-00ad82a08272 // indirect
 	github.com/fatih/color v1.10.0 // indirect
-	github.com/frankban/quicktest v1.7.2 // indirect
+	github.com/frankban/quicktest v1.11.2 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/golang/snappy v0.0.2 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
@@ -27,7 +27,7 @@ require (
 	github.com/unknwon/com v1.0.1
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b // indirect
-	golang.org/x/sys v0.0.0-20201113233024-12cec1faf1ba // indirect
+	golang.org/x/sys v0.0.0-20201116194326-cc9327a14d48 // indirect
 	golang.org/x/text v0.3.4 // indirect
 	gopkg.in/h2non/filetype.v1 v1.0.5
 	gopkg.in/ini.v1 v1.62.0 // indirect

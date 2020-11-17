@@ -8,7 +8,7 @@ import (
 
 	"github.com/unknwon/com"
 
-	"github.com/tosone/release2github/common"
+	"github.com/tosone/release/common"
 )
 
 // ChangeLog get current tag between last tag chang log

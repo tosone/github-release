@@ -6,7 +6,7 @@ import (
 	"github.com/parnurzeal/gorequest"
 	"github.com/spf13/viper"
 
-	"github.com/tosone/release2github/common"
+	"github.com/tosone/release/common"
 )
 
 // Delete delete specified release

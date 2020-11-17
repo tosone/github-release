@@ -10,10 +10,10 @@ import (
 	"github.com/tosone/logging"
 	"github.com/unknwon/com"
 
-	"github.com/tosone/release2github/cmd/create"
-	"github.com/tosone/release2github/cmd/delete"
-	"github.com/tosone/release2github/cmd/version"
-	"github.com/tosone/release2github/common"
+	"github.com/tosone/release/cmd/create"
+	"github.com/tosone/release/cmd/delete"
+	"github.com/tosone/release/cmd/version"
+	"github.com/tosone/release/common"
 )
 
 var dir string

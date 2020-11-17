@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/tosone/release2github/common"
+	"github.com/tosone/release/common"
 )
 
 // Version build version

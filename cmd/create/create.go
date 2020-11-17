@@ -12,11 +12,11 @@ import (
 	"github.com/tosone/logging"
 	"github.com/unknwon/com"
 
-	"github.com/tosone/release2github/cmd/util/git"
-	"github.com/tosone/release2github/cmd/util/release"
-	"github.com/tosone/release2github/common"
-	"github.com/tosone/release2github/common/req"
-	"github.com/tosone/release2github/common/resp"
+	"github.com/tosone/release/cmd/util/git"
+	"github.com/tosone/release/cmd/util/release"
+	"github.com/tosone/release/common"
+	"github.com/tosone/release/common/req"
+	"github.com/tosone/release/common/resp"
 )
 
 // Initialize create a new release on tag to GitHub

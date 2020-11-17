@@ -5,7 +5,7 @@ import (
 
 	"github.com/tosone/logging"
 
-	"github.com/tosone/release2github/cmd/util/release"
+	"github.com/tosone/release/cmd/util/release"
 )
 
 // Initialize delete specified tag on GitHub

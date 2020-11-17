@@ -12,7 +12,7 @@ import (
 	"github.com/spf13/viper"
 	"gopkg.in/h2non/filetype.v1"
 
-	"github.com/tosone/release2github/common"
+	"github.com/tosone/release/common"
 )
 
 // Upload upload file to specified release on GitHub
