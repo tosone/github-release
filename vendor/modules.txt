@@ -6,9 +6,13 @@ github.com/dsnet/compress/bzip2/internal/sais
 github.com/dsnet/compress/internal
 github.com/dsnet/compress/internal/errors
 github.com/dsnet/compress/internal/prefix
+# github.com/elazarl/goproxy v0.0.0-20201021153353-00ad82a08272
+## explicit
 # github.com/fatih/color v1.10.0
 ## explicit
 github.com/fatih/color
+# github.com/frankban/quicktest v1.11.2
+## explicit
 # github.com/fsnotify/fsnotify v1.4.9
 ## explicit
 github.com/fsnotify/fsnotify
@@ -38,7 +42,7 @@ github.com/mattn/go-isatty
 # github.com/mholt/archiver v3.1.1+incompatible
 ## explicit
 github.com/mholt/archiver
-# github.com/mitchellh/mapstructure v1.3.3
+# github.com/mitchellh/mapstructure v1.4.0
 ## explicit
 github.com/mitchellh/mapstructure
 # github.com/nwaples/rardecode v1.1.0
@@ -92,10 +96,10 @@ github.com/unknwon/com
 # github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
 ## explicit
 github.com/xi2/xz
-# golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
+# golang.org/x/net v0.0.0-20201202161906-c7110b5ffcbb
 ## explicit
 golang.org/x/net/publicsuffix
-# golang.org/x/sys v0.0.0-20201116194326-cc9327a14d48
+# golang.org/x/sys v0.0.0-20201202213521-69691e467435
 ## explicit
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
@@ -113,7 +117,7 @@ gopkg.in/h2non/filetype.v1/types
 gopkg.in/ini.v1
 # gopkg.in/natefinch/lumberjack.v2 v2.0.0
 gopkg.in/natefinch/lumberjack.v2
-# gopkg.in/yaml.v2 v2.3.0
+# gopkg.in/yaml.v2 v2.4.0
 ## explicit
 gopkg.in/yaml.v2
 # moul.io/http2curl v1.0.0
