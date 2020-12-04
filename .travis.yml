@@ -1,3 +1,5 @@
+os: linux
+dist: bionic
 language: go
 go:
   - 1.15.x
@@ -8,10 +10,3 @@ before_script:
 script:
   - make lint
   - make
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-    - make release && sudo cp release/release /usr/bin && release create
-  on:
-    tags: true
